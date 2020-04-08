@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        alert(1n + 2n); // 3
+
+        alert(5n / 2n); // 2
+        let bigint = 1n;
+        let number = 2;
+
+        // number to bigint
+        alert(bigint + BigInt(number)); // 3
+
+        // bigint to number
+        alert(Number(bigint) + number); // 3
+        alert( 2n > 1n ); // true
+
+        alert( 2n > 1 ); // true
+        alert( 1 == 1n ); // true
+
+        alert( 1 === 1n ); // false
+
+        alert( 1n || 2 ); // 1 (1n is considered truthy)
+
+        alert( 0n || 2 ); // 2 (0n is considered falsy)
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
