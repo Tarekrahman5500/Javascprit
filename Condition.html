@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Condition</title>
+</head>
+<body>
+<script>
+    'use strict';
+    let year = prompt("Which year is my birthday", 0);
+    if (year != 1998) {
+        alert("sorry you don't know");
+    } else {
+        alert("yes");
+    }
+    let allowed;
+    let age = prompt("your age", 0);
+    allowed = age >= 18;
+    alert(allowed);
+
+    let company = prompt('Which company created JavaScript?', '');
+
+    !('Netscape' == company) ? alert('Wrong.') : alert('Right!');
+    let login = prompt("your position in your companey",'');
+    let message =  ('Employee' == login) ? 'Hello' :
+        !('Director' == login) ? (!('' == login)) ? 'No login' :
+            '' : 'Greetings';
+    alert(message);
+    alert( alert(1) || 2 || alert(3) );
+    alert( 1 && null && 2 );
+    alert( alert(1) && alert(2) );
+    alert(2||3);
+    alert( null || 2 && 3 || 4 );
+
+
+</script>
+</body>
+</html>

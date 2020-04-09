@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<script>
+    'use strict';
+    let message = prompt("Who are you?", '');
+    if ('admin' == message) {
+        let pass = prompt("password", '');
+        if (pass == 123)
+            alert("Welcome");
+        else
+            alert("Wrong Password!");
+    } else if (null == message || '' == message) {
+        alert("canceled");
+    } else
+        alert("I don't know who you are");
+
+</script>
+</body>
+</html>
