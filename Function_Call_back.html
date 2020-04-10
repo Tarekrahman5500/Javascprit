@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function_Call_back</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function ask(question,yes,no) {
+        (confirm(question))?yes():no();
+
+    }
+    function ok() {
+        alert("welcome");
+
+    }
+    function cancel() {
+        alert("in back");
+
+    }
+    ask ("do you go?",ok,cancel);
+    ask(
+        "Do you agree?",
+        function() { alert("You agreed."); },
+        function() { alert("You canceled the execution."); }
+    );
+</script>
+</body>
+</html>
