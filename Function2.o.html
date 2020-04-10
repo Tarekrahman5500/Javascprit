@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function2.o</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    function sum(a, b) {
+        a = +a;
+        b = +b;
+
+        return a + b;
+
+    }
+    let x = " any integer",y = " any integer";
+
+    let num =prompt(`enter 1st number ${x}`,);
+    let num1 =prompt(`enter 2nd number ${y}`,);
+
+    alert(sum(num,num1));
+
+    function checkAge(age) {
+       //  let a =(typeof age);
+
+        if (+age >= 18) {
+            return true;
+        }else  if(age ==""||age ==null|| (typeof age) ==="string"){
+
+
+        }
+        else {
+            return confirm('Do you have permission from your parents?');
+        }
+
+    }
+    let Age;
+    let age = prompt(`How old are you?${Age}`,);
+
+
+
+    if ( checkAge(age) ) {
+        alert( 'Access granted' );
+    } else {
+        alert( 'Access denied' );
+    }
+</script>
+</body>
+</html>

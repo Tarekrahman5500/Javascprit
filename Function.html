@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+<body>
+<script>
+    'use strict';
+    function msg() {
+
+        alert("hi function");
+    }
+    msg();
+    let name = "motin";
+    function fun() {
+         name = "udoy";
+        let msg = "hello "+name;
+        alert(msg);
+    }
+    alert(name);
+    fun();
+    alert(name);
+    function showmsg(form,text) {
+        alert(form+":"+text);
+    }
+    showmsg("tarek,here");
+    showmsg("function, working");
+
+    function showMessage(from, text) {
+
+        from = '*' + from + '*'; // make "from" look nicer
+
+        alert( from + ': ' + text );
+    }
+
+    let from = "udoy";
+
+    showMessage(from, "Hello"); // *Ann*: Hello
+
+    // the value of "from" is the same, the function modified a local copy
+    alert( from );
+</script>
+
+</body>
+</html>
