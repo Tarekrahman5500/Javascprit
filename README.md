@@ -1,2 +1,2 @@
 # Javascprit
-learn basic things like modern js extranal file variables use of strict a a few things
+finish the structure part and leran Code quality like Debugging in Chrome,Coding Style and comments but thinks like Ninja code and Automated testing with Mocha can't understand
