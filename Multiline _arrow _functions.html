@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiline</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let sum = (a, b) => {  // the curly brace opens a multiline function
+        let result = a + b;
+        return result; // if we use curly braces, then we need an explicit "return"
+    };
+
+
+    alert( sum(1, 2) ); // 3
+
+    let ask=(question, yes, no) =>
+        (confirm(question))? alert(yes):
+         alert(no);
+
+
+    ask(
+        "Do you agree?",
+        "You agreed.",
+        "You canceled the execution."
+    );
+</script>
+</body>
+</html>

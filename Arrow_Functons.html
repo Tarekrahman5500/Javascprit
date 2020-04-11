@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow</title>
+</head>
+<body>
+      <script>
+          "use strict";
+          let sum=(a,b)=> a+b;
+        let  n = prompt("1st value?" ,"");
+        let  n1 = prompt("2nd value?" ,"");
+        alert(`The sum of ${n} and ${n1} is `+sum(+n,+n1));
+
+          let double = n => n * 2;
+          // roughly the same as: let double = function(n) { return n * 2 }
+          let  n2 = prompt("Enter any integer?" ,"");
+          alert( double(n2) ); // 6
+          let age = prompt("What is your age?", 18);
+
+          let welcome = (age < 18) ?
+              () => alert('Hello') :
+              () => alert("Greetings!");
+
+          welcome();
+      </script>
+</body>
+</html>
