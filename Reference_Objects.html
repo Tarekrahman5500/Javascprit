@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reference_Objects</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let user = {name: 'John'};
+
+    let admin = user;
+
+    admin.name = 'Pete'; // changed by the "admin" reference
+
+    alert(user.name); // 'Pete', changes are seen from the "user" reference
+
+    let a = {};
+    let b = a; // copy the reference
+
+    alert(a == b); // true, both variables reference the same object
+    alert(a === b); // true
+    a = {};
+    b = {}; // two independent objects
+
+    alert(a == b); // false
+    alert(a === b); // false
+    const user = {
+        name: "John"
+    };
+
+    user.age = 25; // (*)
+
+    alert(user.age); // 25
+    /*user = {
+        name: "Pete"
+    };*/ // error
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shortarhand_Objects</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function makeUser(name, age) {
+        return {
+             name,
+             age,
+            // ...other properties
+        };
+    }
+
+    let user = makeUser(prompt("name?", ""), prompt("age?", ""));
+    alert(user.name +" and " +user.age); //
+    let obj = {
+        0: "test" // same as "0": "test"
+    };
+
+    // both alerts access the same property (the number 0 is converted to string "0")
+    alert( obj["0"] ); // test
+    alert( obj[0] ); // test (same property)
+</script>
+</body>
+</html>
