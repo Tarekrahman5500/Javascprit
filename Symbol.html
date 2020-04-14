@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let id1 = Symbol("id");
+    let id2 = Symbol("id");
+
+    alert(id1 == id2); // false
+    let id = Symbol("id");
+  //  alert(id); // TypeError: Cannot convert a Symbol value to a string
+    alert(typeof id);
+    alert(id.description); // id
+    let user = { // belongs to another code
+        name: "John"
+    };
+
+     id = Symbol("id");
+
+    user[id] = 1;
+
+    alert( user[id] ); // we can access the data using the symbol as the key
+</script>
+</body>
+</html>
