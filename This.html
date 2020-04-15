@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let user = {
+        name: "John",
+        age: 30,
+
+        sayHi() {
+            let name = "tarek";
+            alert(name);
+            // "this" is the "current object"
+            alert(this.name);
+        }
+
+    };
+
+    user.sayHi(); // John
+    let admin = user;
+    user = null; // overwrite to make things obvious
+
+    admin.sayHi(); // Whoops! inside sayHi(), the old name is used! error!
+    let user1 = { name: "John" };
+    let admin1 = { name: "Admin" };
+
+    function sayHi() {
+        alert( this.name );
+    }
+
+    // use the same function in two objects
+    user1.f = sayHi;
+    admin1.f = sayHi;
+
+    // these calls have different this
+    // "this" inside the function is the object "before the dot"
+    user1.f(); // John  (this == user)
+    admin1.f(); // Admin  (this == admin)
+
+    admin1['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+</script>
+</body>
+</html>
