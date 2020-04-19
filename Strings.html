@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function sum(a, b) {
+        return parseInt(a + b);
+    }
+
+    alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+    let guestList = `Guests:
+ * John
+ * Pete
+ * Mary
+`;
+
+    alert(guestList); // a list of guests, multiple lines
+    guestList = "Guests:\n * John\n * Pete\n * Mary";
+
+
+    alert(guestList); // a multiline list of guests
+    alert( "\u00A9" ); // ©
+    alert( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long unicode)
+    alert( "\u{1F60D}" ); // 😍, a smiling face symbol (another long unicode)
+    alert( 'I\'m the Inivatable!' ); // I'm the Walrus!
+    alert( "The backslash: \\" ); // The backslash: \
+    alert( `My\n`.length ); // 3
+    let str ="My\n";
+    alert(str);
+    str = `Hello`;
+
+    // the first character
+    alert( str[0] ); // H
+    alert( str.charAt(0) ); // H
+
+    // the last character
+    alert( str[str.length - 1] ); // o
+    str = `Hello`;
+
+    alert( str[1000] ); // undefined
+    alert( str.charAt(1000) ); // '' (an empty string)
+    for (let char of "Hello") {
+        alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc)
+    }
+     str = 'Hi';
+
+  //  str[0] = 'h'; // error
+    alert( str[0] ); // doesn't work
+     str = 'Hi';
+
+    str = 'h' + str[1]; // replace the string
+
+    alert( str ); // hi
+    alert( 'Interface'.toUpperCase() ); // INTERFACE
+    alert( 'Interface'.toLowerCase() ); // interface
+</script>
+</body>
+</html>

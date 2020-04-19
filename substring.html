@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>substring</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let str = 'Widget with id';
+
+    alert( str.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+    alert( str.indexOf('widget') ); // -1, not found, the search is case-sensitive
+
+    alert( str.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+    str = 'Widget with id';
+
+    alert( str.indexOf('id', 2) ) // 12
+    str = 'As sly as a fox, as strong as an ox';
+
+    let target = 'as'; // let's look for it
+
+    let pos = 0;
+    while (true) {
+        let foundPos = str.indexOf(target, pos);
+        if (foundPos === -1) break;
+
+        alert( `Found at ${foundPos}` );
+        pos = foundPos + 1; // continue the search from the next position
+
+    }
+    str = "As sly as a fox, as strong as an ox";
+     target = "as";
+
+     pos = -1;
+    while ((pos = str.indexOf(target, pos + 1)) !== -1) {
+        alert( pos );
+    }
+    str = "Widget with id";
+
+    if (str.indexOf("Widget") !== -1) {
+        alert("We found it"); // works now!
+    }
+    alert( ~2 ); // -3, the same as -(2+1)
+    alert( ~1 ); // -2, the same as -(1+1)
+    alert( ~0 ); // -1, the same as -(0+1)
+    alert( ~-1 ); // 0, the same as -(-1+1)
+    str = "Widget";
+
+    if (~str.indexOf("Widget")) {
+        alert( 'Found it!' ); // works
+    }
+    alert( "Widget with id".includes("Widget") ); // true
+
+    alert( "Hello".includes("Bye") ); // false
+    alert( "Widget".includes("id") ); // true
+    alert( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"
+    alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
+    alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"
+    str = "stringify";
+    alert( str.slice(0, 5) ); // 'strin', the substring from 0 to 5 (not including 5)
+    alert( str.slice(0, 1) ); // 's', from 0 to 1, but not including 1, so only character at 0
+    str = "stringify";
+    alert( str.slice(2) ); // 'ringify', from the 2nd position till the end
+    str = "stringify";
+
+    // start at the 4th position from the right, end at the 1st from the right
+    alert( str.slice(-4, -1) ); // 'gif'
+    // these are same for substring
+    alert( str.substring(2, 6) ); // "ring"
+    alert( str.substring(6, 2) ); // "ring"
+    alert( str.substring(-6, -2) ); // "" (an empty string)
+
+    // ...but not for slice:
+    alert( str.slice(2, 6) ); // "ring" (the same)
+    alert( str.slice(6, 2) ); // "" (an empty string)
+    alert( str.substr(2, 4) ); // 'ring', from the 2nd position get 4 characters
+    alert( str.substr(-4, 2) ); // 'gi', from the 4th position get 2 characters
+    alert( 'a' > 'Z' ); // true
+    alert( 'Österreich' > 'Zealand' ); // true
+    // different case letters have different codes
+    alert( "z".codePointAt(0) ); // 122
+    alert( "Z".codePointAt(0) ); // 90
+    alert( String.fromCodePoint(90) ); // Z
+    // 90 is 5a in hexadecimal system
+    alert( '\u005a' ); // Z
+    str = '';
+
+    for (let i = 65; i <= 220; i++) {
+        str += String.fromCodePoint(i);
+    }
+    alert( str );
+    // ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+    // ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜ
+    alert( 'Österreich'.localeCompare('Zealand') ); // -1
+    alert( '𝒳'.length ); // 2, MATHEMATICAL SCRIPT CAPITAL X
+    alert( '😂'.length ); // 2, FACE WITH TEARS OF JOY
+    alert( '𩷶'.length ); // 2, a rare Chinese hieroglyph
+    alert( '𝒳'[0] ); // strange symbols...
+    alert( '𝒳'[1] ); // ...pieces of the surrogate pair
+    // charCodeAt is not surrogate-pair aware, so it gives codes for parts
+
+    alert( '𝒳'.charCodeAt(0).toString(16) ); // d835, between 0xd800 and 0xdbff
+    alert( '𝒳'.charCodeAt(1).toString(16) ); // dcb3, between 0xdc00 and 0xdfff
+    alert( 'S\u0307' ); // Ṡ
+    alert( 'S\u0307\u0323' ); // Ṩ
+    let s1 = 'S\u0307\u0323'; // Ṩ, S + dot above + dot below
+    let s2 = 'S\u0323\u0307'; // Ṩ, S + dot below + dot above
+
+    alert( `s1: ${s1}, s2: ${s2}` );
+
+    alert( s1 == s2 ); // false though the characters look identical (?!)
+    alert( "S\u0307\u0323".normalize() === "S\u0323\u0307".normalize() ); // true
+    alert( "S\u0307\u0323".normalize().length ); // 1
+
+    alert( "S\u0307\u0323".normalize() === "\u1e68" ); // true
+    let totn_string = '   TechOnTheNet   ';
+    alert(totn_string.trim());
+</script>
+</body>
+</html>

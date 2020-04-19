@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+</head>
+<body>
+<script>
+    "use strict";
+    alert(+"100px"); // NaN
+    alert(parseInt('100px')); // 100
+    alert(parseFloat('12.5em')); // 12.5
+
+    alert(parseInt('12.3')); // 12, only the integer part is returned
+    alert(parseFloat('12.3.4')); // 12.3, the second point stops the reading
+    alert(parseInt('0xff', 16)); // 255
+    alert(parseInt('ff', 16)); // 255, without 0x also works
+
+    alert(parseInt('2n9c', 36)); // 123456
+    alert(Math.random()); // 0.1234567894322
+    alert(Math.random()); // 0.5435252343232
+    alert(Math.random()); // ... (any random numbers)
+    alert(getRandomInt(3));
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    let min = +prompt("min?", 0);
+    let max = +prompt("max?", 0);
+    alert("Arbitary:" + getRandomArbitrary(min, max));
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    alert(getRandomInt1(min,max));
+    function getRandomInt1(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    }
+
+    alert("inclusie " + getRandomIntInclusive(min, max));
+
+
+
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+        //The maximum is inclusive and the minimum is inclusive
+    }
+    alert( Math.max(3, 5, -10, 0, 1) ); // 5
+    alert( Math.min(1, 2) ); // 1
+    alert( Math.pow(2, 10) ); // 2 in power 10 = 1024
+
+
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-let user = {
+/*let user = {
     name: "John",
     money: 1000,
 
@@ -11,4 +11,6 @@ let user = {
 // conversions demo:
 console.log(user); // hint: string -> {name: "John"}
 console.log(+user); // hint: number -> 1000
-console.log(user + 500); // hint: default -> 1500
+console.log(user + 500); // hint: default -> 1500*/
+"use strict";
+console.log("hi");

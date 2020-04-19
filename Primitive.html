@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Primitive</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let str = "Hello";
+
+    alert(str.toUpperCase()); // HELLO
+    let n = 1.23436;
+
+    alert(n.toFixed(3)); // 1.234
+    alert(typeof 0); // "number"
+
+    alert(typeof new Number(0)); // "object"!
+
+    let zero = new Number(0);
+
+    if (zero) { // zero is true, because it's an object
+        alert("zero is truthy!?!");
+    }
+    let str1 = new String("Hello");
+
+    str1.test = 5; // (*)
+
+    alert("hi" +
+        str1.test);
+
+</script>
+</body>
+</html>
