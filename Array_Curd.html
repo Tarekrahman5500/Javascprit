@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let arr = [1, 0, false];
+
+    alert( arr.indexOf(0) ); // 1
+    alert( arr.indexOf(false) ); // 2
+    alert( arr.indexOf(null) ); // -1
+
+    alert( arr.includes(1) ); // true
+    const arr1 = [NaN];
+    alert( arr1.indexOf(NaN) ); // -1 (should be 0, but === equality doesn't work for NaN)
+    alert( arr1.includes(NaN) );// true (correct)
+
+
+</script>
+</body>
+</html>

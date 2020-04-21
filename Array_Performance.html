@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let fruits = ["Banana"]
+
+    let arr = fruits; // copy by reference (two variables reference the same array)
+
+    alert( arr === fruits ); // true
+
+    arr.push("Pear"); // modify the array by reference
+
+    alert( fruits ); // Banana, Pear - 2 items now
+     arr = ["Apple", "Orange", "Pear"];
+
+    for (let i = 0; i < arr.length; i++) {
+        alert( arr[i] );
+    }
+    fruits = ["Apple", "Orange", "Plum"];
+
+    // iterates over array elements
+    for (let fruit of fruits) {
+        alert( fruit );
+    }
+    for (let key in arr) {
+        alert( arr[key] ); // Apple, Orange, Pear
+    }
+    arr = [1, 2, 3, 4, 5];
+
+    arr.length = 2; // truncate to 2 elements
+    alert( arr ); // [1, 2]
+
+    arr.length = 5; // return length back
+    alert( arr[3] ); // undefined: the values do not return
+    arr = new Array(2); // will it create an array of [2] ?
+
+    alert( arr[0] ); // undefined! no elements.
+
+    alert( arr.length ); // length 2
+    let matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+
+    alert( matrix[1][1] ); // 5, the central element
+    alert( [] + 1 ); // "1"
+    alert( [1] + 1 ); // "11"
+    alert( [1,2] + 1 ); // "1,21"
+    arr = [1, 2, 3];
+
+    alert( arr ); // 1,2,3
+    alert( String(arr) === '1,2,3' ); // true
+    let styles = ["Jazz", "Blues"];
+    styles.push("Rock-n-Roll");
+    styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+    alert( styles.shift() );
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let fruits = ["Apple", "Orange", "Plum"];
+
+    alert( fruits[0] ); // Apple
+    alert( fruits[1] ); // Orange
+    alert( fruits[2] ); // Plum
+    fruits[2] = 'Pear'; // now ["Apple", "Orange", "Pear"]
+    fruits[3] = 'Lemon'; // now ["Apple", "Orange", "Pear", "Lemon"]
+    alert( fruits.length );
+    alert( fruits );
+    // mix of values
+    let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+    // get the object at index 1 and then show its name
+    alert( arr[1].name ); // John
+
+    // get the function at index 3 and run it
+    arr[3](); // hello
+    alert( fruits.pop() ); // remove "Lemon" and alert it
+
+    alert( fruits ); //
+    fruits.push("Mango");
+
+    alert( fruits );
+    alert( fruits.shift() ); // remove Apple and alert it
+
+    alert( fruits );
+    fruits.unshift('Apple');
+
+    alert( fruits );
+    fruits.push("Orange1", "Peach");
+    fruits.unshift("Pineapple", "Lemon1");
+    alert( fruits );
+
+</script>
+</body>
+</html>
