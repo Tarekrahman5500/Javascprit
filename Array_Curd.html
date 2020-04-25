@@ -17,6 +17,107 @@
     const arr1 = [NaN];
     alert( arr1.indexOf(NaN) ); // -1 (should be 0, but === equality doesn't work for NaN)
     alert( arr1.includes(NaN) );// true (correct)
+    let users = [
+        {id: 1, name: "John"},
+        {id: 2, name: "Pete"},
+        {id: 3, name: "Mary"}
+    ];
+
+    let user = users.find(item => item.id === 1);
+
+    alert(user.name); // John
+    let someUsers = users.filter(item => item.id < 3);
+
+    alert(someUsers.length); // 2
+    let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+    alert(lengths); // 5,7,6
+    arr = [ 1, 2, 15 ];
+
+    // the method reorders the content of arr
+    arr.sort();
+
+    alert( arr );  // 1, 15, 2
+    function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
+    }
+
+     arr = [ 1, 5,2, 15 ];
+
+    arr.sort(compareNumeric);
+
+    alert(arr);  // 1, 2, 15
+    [1, -2, 15, 2, 0, 8].sort(function(a, b) {
+        alert( a + " <> " + b );
+    });
+    arr.sort(function(a, b) { return a - b; });
+
+    alert(arr);  //
+
+    alert(arr.sort( (a, b) => a - b ));
+    let countries = ['Österreich', 'Andorra', 'Vietnam'];
+
+    alert( countries.sort( (a, b) => a > b ? 1 : -1) ); // Andorra, Vietnam, Österreich (wrong)
+
+    alert( countries.sort( (a, b) => a.localeCompare(b) ) ); // Andorra,Österreich,Vietnam (correct!)
+
+    arr = [1, 2, 3, 4, 5];
+    arr.reverse();
+
+    alert( arr ); // 5,4,3,2,1
+    let names = 'Bilbo, Gandalf, Nazgul';
+
+    arr = names.split(', ');
+
+    for (let name of arr) {
+        alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+    }
+
+    arr = 'Bilbo, Gandalf, Nazgul, Saruman'.split(', ', 2);
+
+    alert(arr); // Bilbo, Gandalf
+    let str = "test";
+
+    alert( str.split('') ); // t,e,s,t
+    arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+    str = arr.join(';'); // glue the array into a string using ;
+
+    alert( str ); // Bilbo;Gandalf;Nazgul
+    arr = [1, 2, 3, 4, 5];
+
+    let result = arr.reduce((sum, current) => sum + current, 0);
+
+    alert(result); // 15
+    alert(typeof {}); // object
+    alert(typeof []); // same
+
+    alert(Array.isArray({})); // false
+
+    alert(Array.isArray([])); // true
+    let army = {
+        minAge: 18,
+        maxAge: 27,
+        canJoin(user) {
+            return user.age >= this.minAge && user.age < this.maxAge;
+        }
+    };
+
+     users = [
+        {age: 16},
+        {age: 20},
+        {age: 23},
+        {age: 30}
+    ];
+
+    // find users, for who army.canJoin returns true
+    let soldiers = users.filter(user =>army.canJoin(user));
+
+    alert(soldiers.length); // 2
+    alert(soldiers[0].age); // 20
+    alert(soldiers[1].age); // 23
+
 
 
 </script>
