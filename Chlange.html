@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenges</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let arr = prompt("input", "");
+
+    alert("["+ arr.replace( /[^A-Z]/g, "").length+ "," +arr.replace(/[^a-z]/g, "").length+ ","+
+        arr.replace(/[^0-9]/g, "").length+ "]");
+
+</script>
+</body>
+</html>
