@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<script>
+    'use strict';
+
+    // 📁 cache.js
+    let cache = new WeakMap();
+
+    // calculate and remember the result
+    function process(obj) {
+        if (!cache.has(obj)) {
+            cache.set(obj, obj);
+        }
+
+        return cache.get(obj);
+    }
+
+    // 📁 main.js
+    let obj = {/* some object */};
+
+    let result1 = process(obj);
+    let result2 = process(obj);
+
+    // ...later, when the object is not needed any more:
+    obj = null;
+
+    alert(cache.size); // 1 (Ouch! The object is still in cache, taking memory! from map)
+    let messages = [
+        {text: "Hello", from: "John"},
+        {text: "How goes?", from: "John"},
+        {text: "See you soon", from: "Alice"}
+    ];
+
+    let readMessages = new WeakSet();
+
+    // two messages have been read
+    readMessages.add(messages[0]);
+    readMessages.add(messages[1]);
+    // readMessages has 2 elements
+
+    // ...let's read the first message again!
+    readMessages.add(messages[0]);
+    // readMessages still has 2 unique elements
+
+    // answer: was the message[0] read?
+    alert("Read message 0: " + readMessages.has(messages[0])); // true
+
+    messages.shift();
+    // now readMessages has 1 element (technically memory may be cleaned later)
+    let readMap = new WeakMap();
+    readMap.set(messages[0],1);
+    alert(readMap.get(messages[0]));
+
+</script>

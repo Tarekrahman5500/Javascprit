@@ -1,1 +1,2 @@
-alert("I'm JavaScript!");
+//alert("I'm JavaScript!");
+console.log("hi");

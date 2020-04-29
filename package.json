@@ -1,0 +1,19 @@
+{
+  "name": "javascprit",
+  "version": "1.0.0",
+  "description": "finish the structure part and leran Code quality like Debugging in Chrome,Coding Style and comments but thinks like Ninja code and Automated testing with Mocha can't understand",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarekrahman5500/Javascprit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tarekrahman5500/Javascprit/issues"
+  },
+  "homepage": "https://github.com/Tarekrahman5500/Javascprit#readme"
+}
