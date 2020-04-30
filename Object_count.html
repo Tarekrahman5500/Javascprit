@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+    let user = {
+        name: "tarek",
+        age: 22,
+        id: 17
+    };
+    alert( count(user) ); // 3
+
+    function count(user) {
+        let count =  0;
+        //return Object.keys(user).length;
+        for (let usr of Object.values(user)) {
+
+            count = count +1;
+        }
+         return count ;
+    }
+</script>
+</body>
+</html>

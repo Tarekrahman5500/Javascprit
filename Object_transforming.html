@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let prices = {
+        banana: 1,
+        orange: 2,
+        meat: 4
+    };
+    let doubleprice = Object.fromEntries(
+        Object.entries(prices).map(([key, value]) => [key, value * 2])
+    );
+    alert(doubleprice.meat);
+</script>
+</body>
+</html>
