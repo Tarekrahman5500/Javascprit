@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let names = {
+        size: {
+            w: 4,
+            h: 7
+        },
+        items: ["cake", "ice"],
+        extra: true
+    };
+    // destructuring assignment split in multiple lines for clarity
+
+    let{
+        size: {
+            w,
+            h
+
+        },
+        items: [item1, item2],
+        title = "menu",
+
+    } = names;
+    alert(title);  // Menu
+    alert(w);  // 100
+    alert(h); // 200
+    alert(item1);  // Cake
+    alert(item2);  //
+    alert(extra)
+    let {height, width, title1} = { title1: "Menu", height: 200, width: 100 }
+    alert(height);
+    alert(width);
+    alert(title1);
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    "use strict";
+    let opostion = {
+        title: "menu",
+        weight: 50,
+        height: 45
+    };
+    // only extract title as a variable
+    let { title } = opostion;
+
+    alert(title); // Menu
+    let {title: ti, weight: we, height: he} = opostion;
+    alert(ti);
+    alert(we);
+    alert(he);
+    let {height: h, width: w, title: t} = {title: "Menu", height: 200, width: 100}
+
+    alert(t);
+    alert(w);
+    alert(h);
+    let options1 = {
+        title1: "Menu"
+    };
+
+    let {width = prompt("width?"), title1 = prompt("title?")} = options1;
+
+    alert(title);  // Menu
+    alert(width);  // (whatever the result of prompt is)
+</script>
+</body>
+</html>

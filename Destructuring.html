@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let arr = ["a","b"];
+    let [x,y] = arr;
+    alert((x+y).split(" , "))
+    // second element is not needed
+    let [firstName, , title,ti] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+    alert( firstName ); // Consul
+    let user = {};
+    [user.name, user.surname] = "Ilya Kantor".split(' ');
+
+    alert(user.name); // Ilya
+</script>
+</body>
+</html>

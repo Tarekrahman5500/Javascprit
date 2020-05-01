@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let options = {
+        title: "Menu",
+        height: 200,
+        width: 100
+    };
+
+    // title = property named title
+    // rest = object with the rest of properties
+    let {title, ...rest} = options;
+
+    // now title="Menu", rest={height: 200, width: 100}
+    alert(title);
+    alert(rest.height);  // 200
+    alert(rest.width);   // 100
+
+    let title1, width, height;
+
+    // okay now
+    ({title, width, height} = {title: "Menu1", width: 200, height: 100});
+
+    alert( title ); // Menu
+    let a ;
+
+
+    (
+       a = a+1
+    )
+    {
+        a = 10;
+    }
+    alert(a);
+</script>
+</body>
+</html>

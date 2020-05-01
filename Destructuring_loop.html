@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let user = {
+        name: "tarek",
+        age: 22
+    };
+    for (let [key, value] of Object.entries(user)) {
+        alert(`${key}:${value}`);
+    }
+     user = new Map();
+    user.set("name", "John");
+    user.set("age", "30");
+    user.set("name", "tarek");
+    user.set("age", "22");
+
+    for (let [key, value] of user) {
+        alert(`${key}:${value}`); // name:John, then age:30
+    }
+    let guest = "Jane";
+    let admin = "Pete";
+
+    // Swap values: make guest=Pete, admin=Jane
+    [guest, admin] = [admin, guest];
+
+    alert(`${guest} ${admin}`); // Pete Jane (successfully swapped!)
+    let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+    alert(name1); // Julius
+    alert(name2); // Caesar
+
+    // Note that type of `rest` is Array.
+    alert(rest[0]); // Consul
+    alert(rest[1]); // of the Roman Republic
+    alert(rest.length); // 2
+    let [name3 = "Guest", surname1 = "Anonymous"] = ["Julius"];
+
+    alert(name3);    // Julius (from array)
+    alert(surname1); // Anonymous (default used)
+    // runs only prompt for surname
+    let [name4 = prompt('name?'), surname4 = prompt('surname?')] = ["Julius"];
+
+    alert(name4);    // Julius (from array)
+    alert(surname4); // whatever prompt gets
+</script>
+</body>
+</html>

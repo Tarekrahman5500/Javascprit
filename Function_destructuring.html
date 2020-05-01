@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let ops = {
+        title: "menu",
+        items: ["item1", "item2"]
+    };
+
+    function Ex({title = "undefined", width = 200, height =300, items = []}) {
+
+        alert( `${title} ${width} ${height}` ); // Menu 200 300
+        alert( items ); // Item1, Item2
+    }
+    function showMenu({
+                          title = "Untitled",
+                          width: w = 100,  // width goes to w
+                          height: h = 200, // height goes to h
+                          items: [item1, item2] // items first element goes to item1, second to item2
+                      }) {
+        alert( `${title} ${w} ${h}` ); // My Menu 100 200
+        alert( item1 ); // Item1
+        alert( item2 ); // Item2
+    }
+    Ex(ops);
+    showMenu(ops);
+    function showMenu1({ title = "Menu", width = 100, height = 200 } = {}) {
+        alert( `${title} ${width} ${height}` );
+    }
+
+    showMenu1();
+</script>
+</body>
+</html>
