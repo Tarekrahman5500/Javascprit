@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    // current date
+    let date = new Date();
+
+    // the hour in your current time zone
+    alert( date.getHours() );
+
+    // the hour in UTC+0 time zone (London time without daylight savings)
+    alert( date.getUTCHours() );
+    alert( new Date().getTimezoneOffset() );
+    alert( new Date().getTime() );
+    let today = new Date();
+
+    today.setUTCHours(0);
+    today.setHours(0);
+    alert(today); // still today, but the hour is changed to 0
+
+    today.setHours(0, 0, 0, 0);
+    alert(today); // still today, now 00:00:00 sharp.
+    date = new Date(2013, 0, 32); // 32 Jan 2013 ?!?
+    alert(date); // ...is 1st Feb 2013!
+    date = new Date(2016, 1, 28);
+    date.setDate(date.getDate() + 2);
+
+    alert( date ); // 1 Mar 2016
+    date = new Date();
+    date.setSeconds(date.getSeconds() + 120);// time is after 120s
+
+    alert( date ); // shows the correct date
+    date = new Date(2016, 1, 2); // 2 Fan 2016
+    date.setDate(1); // 1st day of month
+    alert(date);
+    date.setDate(0); // set day 31 of pre month
+    alert( date );
+
+    date.setDate(0); // min day is 1, so the last day of the previous month is assumed
+    alert( date ); // 31 Dec 2015
+    date.setDate(-2);// 29 dec 2015
+    alert(date);
+    date = new Date();
+    alert(+date); // the number of milliseconds, same as date.getTime()
+</script>
+
+</body>
+</html>

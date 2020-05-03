@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let date = new Date(2012, 0, 0);  // 3 Jan 2012
+    alert(date);
+    alert( getLocalDay(date) );
+    function getLocalDay(date) {
+
+        let day = date.getDay();
+        if (day === 0)
+            day = 7;
+        return day;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let date = new Date(2012, 0, 3);  // 3 Jan 2012
+    alert( getWeekDay(date) );        // should output "TU"
+   // alert(date.getDay());
+    function getWeekDay(date) {
+      let  days = ['Su', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
+      return days[date.getDay()];
+    }
+</script>
+</body>
+</html>

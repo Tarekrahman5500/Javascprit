@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function getSecondsToTomorrow() {
+        let now = new Date();
+        //let hour = now.getHours();
+        //let minutes = now.getMinutes();
+        //let seconds = now.getSeconds();
+        let totalSecondsToday = (now.getHours() * 60 + now.getMinutes()) * 60 + now.getSeconds();
+        let totalSecondsInADay = 86400;
+
+        return totalSecondsInADay - totalSecondsToday;
+    }
+    alert(getSecondsToTomorrow());
+    //altenative
+    /*function getSecondsToTomorrow() {
+        let now = new Date();
+
+        // tomorrow date
+        let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+
+        let diff = tomorrow - now; // difference in ms
+        return Math.round(diff / 1000); // convert to seconds
+    }*/
+</script>
+</body>
+</html>

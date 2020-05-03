@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+   // let start = new Date(); // start measuring time intence of
+    let start = Date.now(); // milliseconds count from 1 Jan 1970
+
+    // do the job
+    for (let i = 0; i < 100000; i++) {
+        let doSomething = i * i * i;
+    }
+
+    // let end = new Date(); // end measuring time can be use
+    let end = Date.now(); // done
+
+    alert( "The loop took "+ (end - start) + " ms" );
+</script>
+</body>
+</html>

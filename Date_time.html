@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let now = new Date();
+    alert(now); // shows current date/time
+    // 0 means 01.01.1970 UTC+0
+    let utc = new Date(0);
+    alert(utc);
+    // now add 24 hours, get 02.01.1970 UTC+0
+    let Jan02_1970 = new Date(24 * 3600 * 1000);
+    alert(Jan02_1970);
+    // 31 Dec 1969
+    let Dec31_1969 = new Date(-24 * 3600 * 1000);
+    alert(Dec31_1969);
+    let date = new Date("2022-01-26");
+    alert(date);
+    // The time is not set, so it's assumed to be midnight GMT and
+    // is adjusted according to the timezone the code is run in
+    date = new Date(2011, 0, 1, 2, 3, 4, 567);
+    alert( date ); // 1.01.2011, 02:03:04.567
+</script>
+</body>
+</html>
