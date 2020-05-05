@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let user = {
+        name: "John",
+        age: 25,
+        roles: {
+            isAdmin: false,
+            isEditor: true
+        }
+    };
+
+    alert(JSON.stringify(user, null, 2));
+    alert(JSON.stringify(user, null, 4));
+</script>
+</body>
+</html>

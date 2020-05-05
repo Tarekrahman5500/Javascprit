@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let user = {
+        sayHi() { // ignored
+            alert("Hello");
+        },
+        [Symbol("id")]: 123, // ignored
+        something: undefined // ignored
+    };
+
+    alert( JSON.stringify(user) ); // {} (empty object)
+    let meetup = {
+        title: "Conference",
+        room: {
+            number: 23,
+            participants: ["john", "ann"]
+        }
+    };
+
+    alert( JSON.stringify(meetup) );
+    /* The whole structure is stringified:
+    {
+      "title":"Conference",
+      "room":{"number":23,"participants":["john","ann"]},
+    }
+    */
+</script>
+</body>
+</html>

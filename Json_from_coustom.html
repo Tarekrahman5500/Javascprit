@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let room = {
+        number: 23
+    };
+
+    let meetup = {
+        title: "Conference",
+        date: new Date(Date.UTC(2017, 0, 1)),
+        room
+    };
+
+    alert( JSON.stringify(meetup) );
+    /*
+      {
+        "title":"Conference",
+        "date":"2017-01-01T00:00:00.000Z",  // (1)
+        "room": {"number":23}               // (2)
+      }
+    */
+    let room2 = {
+        number: 23,
+        toJSON() {
+            return this.number;
+        }
+    };
+
+    let meetup2 = {
+        title: "Conference",
+        room2
+    };
+
+    alert( JSON.stringify(room2) ); // 23
+
+    alert( JSON.stringify(meetup2) );
+    /*
+      {
+        "title":"Conference",
+        "room": 23
+      }
+    */
+</script>
+</body>
+</html>
