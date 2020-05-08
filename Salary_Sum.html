@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let companey = {
+        sales: [
+            {
+                name: "Tarek",
+                salary: 10000
+            },
+            {
+                name: "Sourov",
+                salary: 10000
+            }
+        ],
+        development: {
+            sites: [
+                {
+                    name: "Jubayer",
+                    salary: 10000
+                },
+                {
+                    name: "sakib",
+                    salary: 10000
+                }
+            ],
+            internals: [
+                {
+                    name: "hasib",
+                    salary: 10000
+                }
+            ]
+        }
+    };
+
+    function Sumsalaries(depatment) {
+        let sum = 0;
+        let sub = 0;
+        if (Array.isArray(depatment)) {
+          return   depatment.reduce((prev, next) => prev + next.salary, 0);
+        } else {
+            for (sub of Object.values(depatment)) {
+                sum = sum + Sumsalaries(sub);
+            }
+        }
+        return sum;
+
+    }
+
+    alert(Sumsalaries(companey));
+
+
+</script>
+</body>
+</html>
