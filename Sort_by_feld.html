@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let users = [
+        { name: "John", age: 20, surname: "Johnson" },
+        { name: "Pete", age: 18, surname: "Peterson" },
+        { name: "Ann", age: 19, surname: "Hathaway" }
+    ];
+    function ByField(field) {
+        return(a,b) => a[field] > b[field] ? 1 : -1;
+
+    }
+    users.sort(ByField("name"));
+    users.forEach(user =>alert(user.name));
+
+    users.sort(ByField("age"));
+    users.forEach(user =>alert(user.age));
+</script>
+</body>
+</html>

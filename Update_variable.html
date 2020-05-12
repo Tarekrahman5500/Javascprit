@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let name = "John";
+
+    function sayHi() {
+        alert("Hi, " + name);
+    }
+
+    name = "Pete";
+
+    sayHi(); // get update value "Pete"?
+    function makeWorker() {
+        let name1 = "Pete";
+
+        return function() {
+            alert(name1);
+        };
+    }
+
+     let name1 = "John";
+
+    // create a function
+    let work = makeWorker();
+
+    // call it
+    work(); //
+</script>
+</body>
+</html>
