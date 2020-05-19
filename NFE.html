@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let sayHi = function func(who) {
+        alert("hi "+who);
+    };
+
+    sayHi("John"); // Hello, John
+    // But this won't work:
+    func(); // Error, func is not defined (not visible outside of the function)
+</script>
+</body>
+</html>

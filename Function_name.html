@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function f(sayHi = function() {}) {
+        alert(sayHi.name); // sayHi (works!)
+    }
+
+    f();
+    let user = {
+
+        sayHi() {
+            // ...
+        },
+
+        sayBye: function() {
+            // ...
+        }
+
+    }
+
+    alert(user.sayHi.name); // sayHi
+    alert(user.sayBye.name); // sayBye
+
+    // function created inside array
+    let arr = [function() {}];
+
+    alert( arr[0].name ); // <empty string>
+    // the engine has no way to set up the right name, so there is none
+
+</script>
+</body>
+</html>

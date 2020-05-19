@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function sayHi() {
+        alert("Hi");
+
+        // let's count how many times we run
+        sayHi.counter = sayHi.counter + 1;
+    }
+    sayHi.counter = 0; // initial value
+
+    sayHi(); // Hi
+    sayHi(); // Hi
+
+    alert( `Called ${sayHi.counter} times` ); // Called 2 times
+</script>
+</body>
+</html>

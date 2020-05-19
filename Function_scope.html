@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function makeCounter() {
+        // instead of:
+        // let count = 0
+
+        function counter() {
+            return counter.count++;
+        }
+
+        counter.count = 0;
+
+        return counter;
+    }
+
+    let counter = makeCounter();
+   // counter.count = 1;
+    alert( counter() ); // 0
+    alert( counter() ); // 1
+</script>
+</body>
+</html>
