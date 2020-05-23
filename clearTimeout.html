@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let timerId = setTimeout(() => alert("never happens"), 1000);
+    alert(timerId); // timer identifier
+
+    clearTimeout(timerId);
+    alert(timerId); // same identifier (doesn't become null after canceling)
+</script>
+</body>
+</html>

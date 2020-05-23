@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function sayHi() {
+        alert('Hello');
+    }
+
+    setTimeout(sayHi, 1000);
+  function  sayHi1(phrase, who) {
+        alert( phrase + ', ' + who );
+    }
+
+    setTimeout(sayHi1, 1000, "Hello", "John"); // Hello, John
+    setTimeout(() => alert('Hello'), 1000);
+</script>
+</body>
+</html>

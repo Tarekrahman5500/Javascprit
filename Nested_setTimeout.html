@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+    let timerId = setTimeout(function tick() {
+        alert('tick');
+        timerId = setTimeout(tick, 2000); // (*)
+    }, 2000);
+</script>
+
+</body>
+</html>
