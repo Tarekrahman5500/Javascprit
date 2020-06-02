@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Tarekrahman5500/Javascprit/issues"
   },
-  "homepage": "https://github.com/Tarekrahman5500/Javascprit#readme"
+  "homepage": "https://github.com/Tarekrahman5500/Javascprit#readme",
+  "dependencies": {
+    "alert-node": "^3.0.11"
+  }
 }
