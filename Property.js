@@ -37,7 +37,7 @@ dictionary.apple = "Apple";
 dictionary.__proto__ = "test";
 
 // apple and __proto__ is in the loop
-for(let key in dictionary) {
+for (let key in dictionary) {
     console.log(key); // "apple", then "__proto__"
 }
 
