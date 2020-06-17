@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //src = "Finaly.js">
+    function f() {
+        try {
+            alert('start');
+            return "result";
+        } catch (e) {
+            /// ...
+        } finally {
+            alert('cleanup!');
+        }
+    }
+
+    f(); // cleanup!
+</script>
+</body>
+</html>
