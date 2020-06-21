@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    loadScript('script.js', function () {
+       // newFunction();
+        alert(`Cool, the ${script.src} is loaded, let's load one more`);
+        loadScript('script.js', function(script) {
+            alert(`Cool, the second script is loaded`);
+        });
+       });
+
+    function loadScript(src, callback) {
+         let script = document.createElement('script');
+         script.src = src;
+         script.onload = () => callback(null, script);
+        script.onerror = () => callback(new Error(`Script load error for ${src}`));
+         document.head.append(script);
+    }
+</script>
+</body>
+</html>

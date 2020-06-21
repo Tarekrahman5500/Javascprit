@@ -1,3 +1,13 @@
-<script src="alert.js">
+<script >
+    loadScript('script.js', function() {
+        // the callback runs after the script is loaded
+        newFunction(); // so now it works
 
+    });
+    function loadScript(src, callback) {
+        let script = document.createElement('script');
+        script.src = src;
+        script.onload = () => callback(script);
+        document.head.append(script);
+    }
 </script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function loadScript(src) {
+        return new Promise(function (resolve, reject) {
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => resolve(script);
+            script.onload = () => reject(new Error(`Script load error for ${src}`));
+            document.head.append(script);
+        });
+    }
+
+    let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+    promise.then(
+        script => alert(`${script.src} is loaded`),
+        error => alert(`Error :${error.message}`)
+    );
+    promise.then(script => alert('Another handler...'))
+    promise = new Promise(function(resolve, reject) {
+        resolve(1);
+
+        setTimeout(() => resolve(2), 1000);
+    });
+
+    promise.then(alert);
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    delay(3000).then(() => alert('runs after 3 seconds'));
+</script>
+</body>
+</html>
