@@ -18,6 +18,9 @@
   "homepage": "https://github.com/Tarekrahman5500/Javascprit#readme",
   "dependencies": {
     "alert-node": "^3.0.11",
-    "prompt": "^1.0.0"
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.6.0",
+    "prompt": "^1.0.0",
+    "window": "^4.2.7"
   }
 }
